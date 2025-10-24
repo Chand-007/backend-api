@@ -7,7 +7,9 @@ app.use(express.json())
 app.set('json spaces', 4)
 
 app.get('/get-info',(req,res)=>{
-    res.json(data).json("This response is from ${host}-${localhost}")
+    const host = req.hostname;
+    const port = req.socket.localPort;
+   res.json({data,host,port})
 })
 
 console.log()
