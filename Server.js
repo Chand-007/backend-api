@@ -7,7 +7,7 @@ app.use(express.json())
 app.set('json spaces', 4)
 
 app.get('/get-info',(req,res)=>{
-    res.json(data)
+    res.json(data).json("This response is from ${host}-${localhost}")
 })
 
 console.log()
